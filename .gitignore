@@ -1,0 +1,12 @@
+build/
+*_emu
+*_test
+*.bin
+*.elf
+tmap.h
+data.h
+game.h
+*.spr
+*.tmap
+*.tset
+__*

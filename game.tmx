@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="35" tilewidth="8" tileheight="8" nextobjectid="101">
+ <tileset firstgid="1" name="parcel_tiles" tilewidth="269" tileheight="86" tilecount="48" columns="8">
+  <image source="parcel_tiles.png" trans="ff24b6" width="2152" height="516"/>
+  <tile id="16">
+   <animation>
+    <frame tileid="18" duration="100"/>
+    <frame tileid="19" duration="100"/>
+    <frame tileid="21" duration="100"/>
+    <frame tileid="22" duration="100"/>
+    <frame tileid="23" duration="100"/>
+    <frame tileid="24" duration="100"/>
+    <frame tileid="25" duration="100"/>
+    <frame tileid="26" duration="100"/>
+    <frame tileid="41" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="17">
+   <animation>
+    <frame tileid="10" duration="100"/>
+    <frame tileid="11" duration="100"/>
+    <frame tileid="12" duration="100"/>
+    <frame tileid="13" duration="100"/>
+    <frame tileid="14" duration="100"/>
+    <frame tileid="15" duration="100"/>
+    <frame tileid="16" duration="100"/>
+    <frame tileid="17" duration="100"/>
+    <frame tileid="46" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="20">
+   <animation>
+    <frame tileid="1" duration="100"/>
+    <frame tileid="20" duration="100"/>
+    <frame tileid="42" duration="100"/>
+    <frame tileid="6" duration="100"/>
+    <frame tileid="7" duration="100"/>
+    <frame tileid="4" duration="100"/>
+    <frame tileid="5" duration="100"/>
+    <frame tileid="8" duration="100"/>
+    <frame tileid="41" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="34">
+   <animation>
+    <frame tileid="27" duration="100"/>
+    <frame tileid="28" duration="100"/>
+    <frame tileid="29" duration="100"/>
+    <frame tileid="30" duration="100"/>
+    <frame tileid="32" duration="100"/>
+    <frame tileid="33" duration="100"/>
+    <frame tileid="34" duration="100"/>
+    <frame tileid="35" duration="100"/>
+    <frame tileid="46" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="36">
+   <animation>
+    <frame tileid="9" duration="100"/>
+    <frame tileid="31" duration="100"/>
+    <frame tileid="36" duration="100"/>
+    <frame tileid="37" duration="100"/>
+    <frame tileid="38" duration="100"/>
+    <frame tileid="39" duration="100"/>
+    <frame tileid="40" duration="100"/>
+    <frame tileid="0" duration="100"/>
+    <frame tileid="46" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="45">
+   <animation>
+    <frame tileid="45" duration="100"/>
+    <frame tileid="44" duration="100"/>
+    <frame tileid="43" duration="100"/>
+    <frame tileid="3" duration="100"/>
+   </animation>
+  </tile>
+ </tileset>
+ <tileset firstgid="49" name="truck_tiles" tilewidth="59" tileheight="55" tilecount="35" columns="7">
+  <image source="truck_tiles.png" trans="ff24b6" width="413" height="275"/>
+  <tile id="0">
+   <animation>
+    <frame tileid="0" duration="100"/>
+    <frame tileid="1" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="4">
+   <animation>
+    <frame tileid="2" duration="100"/>
+    <frame tileid="3" duration="100"/>
+    <frame tileid="4" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="8">
+   <animation>
+    <frame tileid="5" duration="100"/>
+    <frame tileid="6" duration="100"/>
+    <frame tileid="7" duration="100"/>
+    <frame tileid="8" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="9">
+   <animation>
+    <frame tileid="10" duration="100"/>
+    <frame tileid="9" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="15">
+   <animation>
+    <frame tileid="11" duration="100"/>
+    <frame tileid="12" duration="100"/>
+    <frame tileid="13" duration="100"/>
+    <frame tileid="14" duration="100"/>
+    <frame tileid="15" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="17">
+   <animation>
+    <frame tileid="16" duration="100"/>
+    <frame tileid="17" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="20">
+   <animation>
+    <frame tileid="18" duration="100"/>
+    <frame tileid="19" duration="100"/>
+    <frame tileid="20" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="24">
+   <animation>
+    <frame tileid="21" duration="100"/>
+    <frame tileid="22" duration="100"/>
+    <frame tileid="23" duration="100"/>
+    <frame tileid="24" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="31">
+   <animation>
+    <frame tileid="29" duration="100"/>
+    <frame tileid="28" duration="100"/>
+    <frame tileid="27" duration="100"/>
+    <frame tileid="26" duration="100"/>
+    <frame tileid="31" duration="100"/>
+   </animation>
+  </tile>
+ </tileset>
+ <tileset firstgid="84" name="left_tiles" tilewidth="91" tileheight="85" tilecount="12" columns="4">
+  <image source="left_tiles.png" trans="ff24b6" width="364" height="255"/>
+  <tile id="1">
+   <animation>
+    <frame tileid="0" duration="100"/>
+    <frame tileid="1" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="2">
+   <animation>
+    <frame tileid="2" duration="100"/>
+    <frame tileid="3" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="4">
+   <animation>
+    <frame tileid="4" duration="100"/>
+    <frame tileid="5" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="6">
+   <animation>
+    <frame tileid="6" duration="100"/>
+    <frame tileid="7" duration="100"/>
+    <frame tileid="6" duration="100"/>
+    <frame tileid="7" duration="100"/>
+    <frame tileid="6" duration="100"/>
+    <frame tileid="7" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="8">
+   <animation>
+    <frame tileid="8" duration="100"/>
+    <frame tileid="9" duration="100"/>
+    <frame tileid="8" duration="100"/>
+    <frame tileid="9" duration="100"/>
+    <frame tileid="8" duration="100"/>
+    <frame tileid="9" duration="100"/>
+    <frame tileid="10" duration="100"/>
+   </animation>
+  </tile>
+ </tileset>
+ <tileset firstgid="96" name="background" tilewidth="400" tileheight="280" tilecount="1" columns="1">
+  <image source="background.png" trans="ff24b6" width="400" height="280"/>
+ </tileset>
+ <tileset firstgid="97" name="right_tiles" tilewidth="99" tileheight="76" tilecount="12" columns="4">
+  <image source="right_tiles.png" trans="ff24b6" width="396" height="228"/>
+  <tile id="1">
+   <animation>
+    <frame tileid="0" duration="100"/>
+    <frame tileid="1" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="2">
+   <animation>
+    <frame tileid="2" duration="100"/>
+    <frame tileid="3" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="4">
+   <animation>
+    <frame tileid="4" duration="100"/>
+    <frame tileid="5" duration="100"/>
+    <frame tileid="4" duration="100"/>
+    <frame tileid="5" duration="100"/>
+    <frame tileid="4" duration="100"/>
+    <frame tileid="5" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="6">
+   <animation>
+    <frame tileid="6" duration="100"/>
+    <frame tileid="7" duration="100"/>
+    <frame tileid="6" duration="100"/>
+    <frame tileid="7" duration="100"/>
+    <frame tileid="6" duration="100"/>
+    <frame tileid="7" duration="100"/>
+    <frame tileid="5" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="9">
+   <animation>
+    <frame tileid="9" duration="100"/>
+    <frame tileid="10" duration="100"/>
+   </animation>
+  </tile>
+ </tileset>
+ <tileset firstgid="109" name="info" tilewidth="400" tileheight="291" tilecount="1" columns="1">
+  <image source="info.png" trans="ff24b6" width="400" height="291"/>
+ </tileset>
+ <tileset firstgid="110" name="intro_micro" tilewidth="400" tileheight="258" tilecount="1" columns="1">
+  <image source="intro.png" trans="ff00da" width="400" height="258"/>
+ </tileset>
+ <tileset firstgid="111" name="miss_tiles" tilewidth="58" tileheight="11" tilecount="4" columns="1">
+  <image source="miss_tiles.png" trans="ff00da" width="58" height="44"/>
+  <tile id="3">
+   <animation>
+    <frame tileid="0" duration="100"/>
+    <frame tileid="1" duration="100"/>
+    <frame tileid="2" duration="100"/>
+    <frame tileid="3" duration="100"/>
+   </animation>
+  </tile>
+ </tileset>
+ <imagelayer name="background">
+  <image source="background.png" width="400" height="280"/>
+ </imagelayer>
+ <objectgroup name="objects">
+  <object id="30" name="up" type="mario" gid="106" x="281.5" y="141.167" width="99" height="76" visible="0"/>
+  <object id="41" name="low" type="mario" gid="98" x="281.5" y="147.167" width="99" height="76" visible="0"/>
+  <object id="45" name="mid" type="mario" gid="99" x="281.5" y="141.167" width="99" height="76" visible="0"/>
+  <object id="47" name="rest" type="mario" gid="103" x="281.5" y="141.167" width="99" height="76" visible="0"/>
+  <object id="52" name="miss" type="mario" gid="101" x="281.5" y="141.167" width="99" height="76" visible="0"/>
+  <object id="29" name="up" type="luigi" gid="86" x="26.5" y="134.167" width="91" height="85" visible="0"/>
+  <object id="31" name="miss" type="luigi" gid="90" x="23.5" y="149.167" width="91" height="85" visible="0"/>
+  <object id="33" name="low" type="luigi" gid="85" x="26.5" y="149.167" width="91" height="85" visible="0"/>
+  <object id="38" name="rest" type="luigi" gid="92" x="26.5" y="149.167" width="91" height="85" visible="0"/>
+  <object id="55" name="mid" type="luigi" gid="88" x="26.5" y="142.167" width="91" height="85" visible="0"/>
+  <object id="40" name="move" type="truck" gid="58" x="24.5" y="108.167" width="59" height="55" visible="0"/>
+  <object id="34" name="one" type="truck" gid="64" x="24.5" y="108.167" width="59" height="55" visible="0"/>
+  <object id="35" name="six" type="truck" gid="69" x="24.5" y="108.167" width="59" height="55" visible="0"/>
+  <object id="39" name="five" type="truck" gid="53" x="24.5" y="108.167" width="59" height="55" visible="0"/>
+  <object id="43" name="three" type="truck" gid="73" x="24.5" y="108.167" width="59" height="55" visible="0"/>
+  <object id="44" name="four" type="truck" gid="57" x="24.5" y="108.167" width="59" height="55" visible="0"/>
+  <object id="46" name="eight" type="truck" gid="49" x="24.5" y="108.167" width="59" height="55" visible="0"/>
+  <object id="48" name="seven" type="truck" gid="66" x="24.5" y="108.167" width="59" height="55" visible="0"/>
+  <object id="49" name="two" type="truck" gid="80" x="24.5" y="108.167" width="59" height="55" visible="0"/>
+  <object id="50" name="three" type="truck" gid="73" x="24.5" y="108.167" width="59" height="55" visible="0"/>
+  <object id="98" name="empty" type="truck" gid="79" x="24" y="108" width="59" height="55"/>
+  <object id="32" name="three" type="parcel" gid="18" x="97.5" y="150.167" width="269" height="86" visible="0"/>
+  <object id="36" name="five" type="parcel" gid="35" x="97.5" y="151.167" width="269" height="86" visible="0"/>
+  <object id="37" name="two" type="parcel" gid="21" x="97.5" y="151.167" width="269" height="86" visible="0"/>
+  <object id="42" name="one" type="parcel" gid="37" x="97.8333" y="151.167" width="269" height="86" visible="0"/>
+  <object id="51" name="zero" type="parcel" gid="46" x="97.5" y="151.167" width="269" height="86" visible="0"/>
+  <object id="53" name="four" type="parcel" gid="17" x="97.5" y="151.167" width="269" height="86" visible="0"/>
+  <object id="100" name="status" type="miss" gid="114" x="225.5" y="60.5" width="58" height="11"/>
+ </objectgroup>
+ <imagelayer name="intro" visible="0">
+  <image source="intro.png" width="400" height="258"/>
+ </imagelayer>
+ <imagelayer name="info" visible="0">
+  <image source="info.png" width="400" height="291"/>
+ </imagelayer>
+</map>
