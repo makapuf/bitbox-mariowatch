@@ -5,7 +5,7 @@ This game is a remake of a Game and Watch featureing the Mario Bros for one of t
 
 This version of game and watch featured two LCD screens and was released in 1983.
 
-[More about this game on wikiedia] (https://en.wikipedia.org/wiki/List_of_LCD_games_featuring_Mario#Mario_Bros.)
+[More about this game on wikiedia](https://en.wikipedia.org/wiki/List_of_LCD_games_featuring_Mario#Mario_Bros.)
 
 
 Screenshot
@@ -18,5 +18,4 @@ Controls
 --------
 
 Up and Down on the gamepad control Mario (on the right), buttons A and B control Luigi (on the left). 
-
 
