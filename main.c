@@ -1,6 +1,6 @@
-/* Mario Watch : a remake of 
-   See original gameplay here : https://www.youtube.com/watch?v=03udgQDpQSA
-*/
+/* Mario Watch */
+
+
 #include <stdint.h>
 #include <stdbool.h>
 
