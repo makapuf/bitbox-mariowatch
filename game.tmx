@@ -29,7 +29,7 @@
   <object id="43" name="three" type="truck" gid="73" x="24.5" y="108.167" width="59" height="55" visible="0"/>
   <object id="44" name="four" type="truck" gid="57" x="24.5" y="108.167" width="59" height="55" visible="0"/>
   <object id="46" name="eight" type="truck" gid="49" x="24.5" y="108.167" width="59" height="55" visible="0"/>
-  <object id="48" name="seven" type="truck" gid="66" x="24.5" y="108.167" width="59" height="55"/>
+  <object id="48" name="seven" type="truck" gid="66" x="24.5" y="108.167" width="59" height="55" visible="0"/>
   <object id="49" name="two" type="truck" gid="80" x="24.5" y="108.167" width="59" height="55" visible="0"/>
   <object id="50" name="three" type="truck" gid="73" x="24.5" y="108.167" width="59" height="55" visible="0"/>
   <object id="98" name="empty" type="truck" gid="79" x="24" y="108" width="59" height="55" visible="0"/>

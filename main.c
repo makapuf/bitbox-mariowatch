@@ -95,7 +95,7 @@ void sprite_transfer(struct ExtSprite es)
 		const struct MapObjectDef *mod = map_objects[es.sprite_id][es.state];
 		es.sprite->x = mod->x;
 		es.sprite->y = mod->y;
-		es.sprite->fr = map_game.sprites[mod->sprite]->states[mod->state].frames[es.frame];
+		es.sprite->fr = mod->sprite->states[mod->state].frames[es.frame];
 	}
 }
 
@@ -152,6 +152,23 @@ void game_intro() {
 }
 
 
+// find a sprite_id from sprite pointer
+int sprite_id( const struct SpriteDef * spr ) 
+{
+	static const struct SpriteDef * sprtab[] = {
+		&sprite_truck,
+		&sprite_luigi,
+		&sprite_mario,
+		&sprite_status,
+		&sprite_parcel,
+	};
+	for (int i=0;i<NBSPRITES;i++) {
+		if (spr==sprtab[i]) return i;
+	}
+	die (9,9);
+	return 0; // never reached
+}
+
 void game_init()
 {
 	// load data
@@ -161,9 +178,10 @@ void game_init()
 	o_intro = sprite_new(data_game_intro_spr,0,0,10); // a bit behind others
 	o_bottom = rect_new(0,250,400,50,20, RGB(255,255,255)); // white bottom
 
-	// link positions to state
+	// init sprite[state]->objectdef map
 	for (int i=0;i<map_game.nb_objects;i++) {
-		map_objects[map_game.objects[i].sprite][map_game.objects[i].state]=&map_game.objects[i];
+		const int sprid=sprite_id(map_game.objects[i].sprite);
+		map_objects[sprid][map_game.objects[i].state]=&map_game.objects[i];
 	}
 
 }
@@ -173,6 +191,7 @@ void game_level_pre()
 	if (o_bg->y>0) {
 		o_bg->y-=6;
 	} else { 
+		o_intro->y = 1000; // hide
 		o_bg->y=0;
 
 		// start game
@@ -182,24 +201,28 @@ void game_level_pre()
 
 		// load all sprites & set to initial position
 		truck.sprite=sprite_new(&data_truck_spr,0,0,0);
+		truck.sprite_id = sprite_id(&sprite_truck);
 		truck.state=state_truck_empty;
 		truck.frame=0;
 
 		mario.sprite=sprite_new(&data_mario_spr,0,0,0);
+		mario.sprite_id = sprite_id(&sprite_mario);
 		mario.state=state_mario_rest;
 		mario.frame=0;
 
 		luigi.sprite=sprite_new(&data_luigi_spr,0,0,0);
+		luigi.sprite_id = sprite_id(&sprite_luigi);
 		luigi.state=state_luigi_rest;
 		luigi.frame=0;
 
 		miss.sprite=sprite_new(&data_status_spr,0,0,0);
+		miss.sprite_id = sprite_id(&sprite_status);
 		miss.state=state_status_miss;
 		miss.frame=0;
 
 		for (int i=0;i<NBPARCELS;i++) {
 			parcels[i].sprite=sprite_new(&data_parcel_spr,0,0,0);
-			parcels[i].sprite_id = 
+			parcels[i].sprite_id = sprite_id(&sprite_parcel);
 			parcels[i].state=255; // off 
 			parcels[i].frame=0;
 		}
@@ -229,13 +252,18 @@ void frame_loose()
 	struct ExtSprite *loser = mario_lost ? &mario : &luigi;
 
 	loser->frame=vga_frame/32;
-	
-	if (loser->frame == map_game.sprites[loser->sprite_id]->states[loser->state].nb_frames) {
+	const struct MapObjectDef *mod = map_objects[loser->sprite_id][loser->state];
+	if (loser->frame == mod->sprite->states[mod->state].nb_frames) {
 		// end of animation, start game
-		// re set loser in place
-		loser->state=mario_lost ? state_mario_mid : state_luigi_mid;
-		loser->frame=0;
-		enter_level();
+		// end or restart game
+		if (miss.frame<=3) {
+			// re set loser in place
+			loser->state=mario_lost ? state_mario_mid : state_luigi_mid;
+			loser->frame=0;
+			enter_level();
+		} else {
+			game_over();
+		}
 	}
 }
 
@@ -250,9 +278,9 @@ void enter_loose()
 	}
 
 	vga_frame=0;
+	miss.frame++; 
 	frame_cb = frame_loose;
 
-	miss.frame++; 
 }
 
 
@@ -309,45 +337,45 @@ void move_players( void )
 		if (parcels[i].waitframe>PARCEL_MOVESPEED) 
 			continue; // too early to move yet
 
-		if (parcels[i].state==state_parcel_zero && parcels[i].frame==2 && mario.state==state_mario_low) {
+		if (parcels[i].state==state_parcel_zero && parcels[i].frame==2 && luigi.state==state_luigi_low) {
 			parcels[i].state=state_parcel_one;
-			mario.frame=1;
-			mario.waitframe=10;
+			luigi.frame=1;
+			luigi.waitframe=10;
 			parcels[i].frame=0;
 			parcels[i].waitframe=PARCEL_MOVESPEED;
-		} else if (parcels[i].state==state_parcel_one && parcels[i].frame==7 && luigi.state==state_luigi_low) {
+		} else if (parcels[i].state==state_parcel_one && parcels[i].frame==7 && mario.state==state_mario_low) {
 			parcels[i].state=state_parcel_two;
-			luigi.frame=1;
-			luigi.waitframe=10;
+			mario.frame=1;
+			mario.waitframe=10;
 			parcels[i].frame=0;
 			parcels[i].waitframe=PARCEL_MOVESPEED;
-		} else if (parcels[i].state==state_parcel_two && parcels[i].frame==7 && mario.state==state_mario_mid) {
+		} else if (parcels[i].state==state_parcel_two && parcels[i].frame==7 && luigi.state==state_luigi_mid) {
 			parcels[i].state=state_parcel_three;
-			mario.frame=1;
-			mario.waitframe=10;
-			parcels[i].frame=0;
-			parcels[i].waitframe=PARCEL_MOVESPEED;
-		} else if (parcels[i].state==state_parcel_three && parcels[i].frame==7 && luigi.state==state_luigi_mid) {
-			parcels[i].state=state_parcel_four;
 			luigi.frame=1;
 			luigi.waitframe=10;
 			parcels[i].frame=0;
 			parcels[i].waitframe=PARCEL_MOVESPEED;
-		} else if (parcels[i].state==state_parcel_four && parcels[i].frame==7 && mario.state==state_mario_up) {
-			parcels[i].state=state_parcel_five;
+		} else if (parcels[i].state==state_parcel_three && parcels[i].frame==7 && mario.state==state_mario_mid) {
+			parcels[i].state=state_parcel_four;
 			mario.frame=1;
 			mario.waitframe=10;
 			parcels[i].frame=0;
 			parcels[i].waitframe=PARCEL_MOVESPEED;
-		} else if (parcels[i].state==state_parcel_five && parcels[i].frame==7 && luigi.state==state_luigi_up) {
+		} else if (parcels[i].state==state_parcel_four && parcels[i].frame==7 && luigi.state==state_luigi_up) {
+			parcels[i].state=state_parcel_five;
+			luigi.frame=1;
+			luigi.waitframe=10;
+			parcels[i].frame=0;
+			parcels[i].waitframe=PARCEL_MOVESPEED;
+		} else if (parcels[i].state==state_parcel_five && parcels[i].frame==7 && mario.state==state_mario_up) {
 			// special : truck & remove 
 			parcels[i].state=255;
 			nbparcels-=1;
 			
 			truck_launch();
 
-			luigi.frame=1;
-			luigi.waitframe=10;
+			mario.frame=1;
+			mario.waitframe=10;
 		} 
 	}
 
@@ -398,7 +426,7 @@ void move_parcel(struct ExtSprite *p)
 
 	if (p->frame==nb_steps) {
 		// breaking : lose a life				
-		mario_lost = p->state == state_parcel_zero || p->state == state_parcel_two || p->state == state_parcel_four;
+		mario_lost = p->state == state_parcel_one || p->state == state_parcel_three || p->state == state_parcel_five;
 		p->state=255;	
 		nbparcels--;	
 		enter_loose();
@@ -413,13 +441,13 @@ void move_parcel(struct ExtSprite *p)
 void truck_launch()
 {
 	switch(truck.state) {
-		case state_truck_empty : truck.state=state_truck_one; break;
-		case state_truck_one : truck.state=state_truck_two; break;
-		case state_truck_two : truck.state=state_truck_three; break;
-		case state_truck_three : truck.state=state_truck_four; break;
-		case state_truck_four : truck.state=state_truck_five; break;
-		case state_truck_five : truck.state=state_truck_six; break;
-		case state_truck_six : truck.state=state_truck_seven; break;
+		case state_truck_empty : truck.state=state_truck_one;   break;
+		case state_truck_one :   truck.state=state_truck_two;   break;
+		case state_truck_two :   truck.state=state_truck_three; break;
+		case state_truck_three : truck.state=state_truck_four;  break;
+		case state_truck_four :  truck.state=state_truck_five;  break;
+		case state_truck_five :  truck.state=state_truck_six;   break;
+		case state_truck_six :   truck.state=state_truck_seven; break;
 		case state_truck_seven : truck.state=state_truck_eight; break;
 	}
 	truck.frame=0;
@@ -431,7 +459,8 @@ void truck_move()
 	if (truck.waitframe) {
 		truck.waitframe--;
 		if (truck.waitframe==0) {
-			if (truck.frame+1 < map_game.sprites[truck.sprite_id]->states[truck.state].nb_frames) {
+			const struct MapObjectDef *mod = map_objects[truck.sprite_id][truck.state];
+			if (truck.frame < mod->sprite->states[truck.state].nb_frames) {
 				truck.frame+=1;
 				truck.waitframe=TRUCK_MOVESPEED;
 			}
@@ -465,7 +494,18 @@ void enter_level()
 
 void game_over()
 {
-	blitter_remove(o_bg); o_bg=0; // unload background
+	blitter_remove(o_bg); o_bg=0; // unload background & all other sprites
+	for (int i=0;i<NBPARCELS;i++) {
+		blitter_remove(parcels[i].sprite);
+		parcels[i].sprite = 0;
+	}
+	blitter_remove(mario.sprite); mario.sprite=0;
+	blitter_remove(luigi.sprite); luigi.sprite=0;
+	blitter_remove(truck.sprite); truck.sprite=0;
+	blitter_remove( miss.sprite);  miss.sprite=0;
+
+	// show intro again
+	o_intro->y = 0;
 	frame_cb=game_intro;
 }
 
