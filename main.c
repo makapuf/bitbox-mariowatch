@@ -256,10 +256,12 @@ void frame_loose()
 	if (loser->frame == mod->sprite->states[mod->state].nb_frames) {
 		// end of animation, start game
 		// end or restart game
-		if (miss.frame<=3) {
+		if (miss.frame<3) {
 			// re set loser in place
 			loser->state=mario_lost ? state_mario_mid : state_luigi_mid;
 			loser->frame=0;
+			miss.frame++; 
+
 			enter_level();
 		} else {
 			game_over();
@@ -278,7 +280,6 @@ void enter_loose()
 	}
 
 	vga_frame=0;
-	miss.frame++; 
 	frame_cb = frame_loose;
 
 }
