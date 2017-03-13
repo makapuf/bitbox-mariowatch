@@ -19,6 +19,7 @@ SPRITES := luigi mario status parcel truck
 IMAGES  := info intro background
 
 data/%.spr sprite_%.h : %.tsx
+	@mkdir -p data
 	$(TSX) $^ -mo data > sprite_$*.h
 
 game.h $(IMAGES:%=data/game_%.spr) : game.tmx
