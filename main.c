@@ -95,7 +95,7 @@ void sprite_transfer(struct ExtSprite es)
 		const struct MapObjectDef *mod = map_objects[es.sprite_id][es.state];
 		es.sprite->x = mod->x;
 		es.sprite->y = mod->y;
-		es.sprite->fr = mod->sprite->states[mod->state].frames[es.frame];
+		es.sprite->fr = mod->sprite->states[mod->state_id].frames[es.frame];
 	}
 }
 
@@ -181,7 +181,7 @@ void game_init()
 	// init sprite[state]->objectdef map
 	for (int i=0;i<map_game.nb_objects;i++) {
 		const int sprid=sprite_id(map_game.objects[i].sprite);
-		map_objects[sprid][map_game.objects[i].state]=&map_game.objects[i];
+		map_objects[sprid][map_game.objects[i].state_id]=&map_game.objects[i];
 	}
 
 }
@@ -253,7 +253,7 @@ void frame_loose()
 
 	loser->frame=vga_frame/32;
 	const struct MapObjectDef *mod = map_objects[loser->sprite_id][loser->state];
-	if (loser->frame == mod->sprite->states[mod->state].nb_frames) {
+	if (loser->frame == mod->sprite->states[mod->state_id].nb_frames) {
 		// end of animation, start game
 		// end or restart game
 		if (miss.frame<3) {

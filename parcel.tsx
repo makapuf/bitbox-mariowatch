@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tileset name="parcel" tilewidth="269" tileheight="86" tilecount="48" columns="8">
  <image source="parcel_tiles.png" trans="ff24b6" width="2152" height="516"/>
- <tile id="16">
+ <tile id="16" type="four">
   <properties>
    <property name="state" value="four"/>
   </properties>
@@ -17,7 +17,7 @@
    <frame tileid="41" duration="100"/>
   </animation>
  </tile>
- <tile id="17">
+ <tile id="17" type="three">
   <properties>
    <property name="state" value="three"/>
   </properties>
@@ -33,7 +33,7 @@
    <frame tileid="46" duration="100"/>
   </animation>
  </tile>
- <tile id="20">
+ <tile id="20" type="two">
   <properties>
    <property name="state" value="two"/>
   </properties>
@@ -49,7 +49,7 @@
    <frame tileid="41" duration="100"/>
   </animation>
  </tile>
- <tile id="34">
+ <tile id="34" type="five">
   <properties>
    <property name="state" value="five"/>
   </properties>
@@ -65,7 +65,7 @@
    <frame tileid="46" duration="100"/>
   </animation>
  </tile>
- <tile id="36">
+ <tile id="36" type="one">
   <properties>
    <property name="state" value="one"/>
   </properties>
@@ -81,7 +81,7 @@
    <frame tileid="46" duration="100"/>
   </animation>
  </tile>
- <tile id="45">
+ <tile id="45" type="zero">
   <properties>
    <property name="state" value="zero"/>
   </properties>

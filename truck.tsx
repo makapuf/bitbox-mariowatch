@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tileset name="truck" tilewidth="59" tileheight="55" tilecount="35" columns="7">
  <image source="truck_tiles.png" trans="ff24b6" width="413" height="275"/>
- <tile id="0">
+ <tile id="0" type="eight">
   <properties>
    <property name="state" value="eight"/>
   </properties>
@@ -10,7 +10,7 @@
    <frame tileid="1" duration="100"/>
   </animation>
  </tile>
- <tile id="4">
+ <tile id="4" type="five">
   <properties>
    <property name="state" value="five"/>
   </properties>
@@ -20,7 +20,7 @@
    <frame tileid="4" duration="100"/>
   </animation>
  </tile>
- <tile id="8">
+ <tile id="8" type="four">
   <properties>
    <property name="state" value="four"/>
   </properties>
@@ -31,7 +31,7 @@
    <frame tileid="8" duration="100"/>
   </animation>
  </tile>
- <tile id="9">
+ <tile id="9" type="move">
   <properties>
    <property name="state" value="move"/>
   </properties>
@@ -40,7 +40,7 @@
    <frame tileid="9" duration="100"/>
   </animation>
  </tile>
- <tile id="15">
+ <tile id="15" type="one">
   <properties>
    <property name="state" value="one"/>
   </properties>
@@ -52,7 +52,7 @@
    <frame tileid="15" duration="100"/>
   </animation>
  </tile>
- <tile id="17">
+ <tile id="17" type="seven">
   <properties>
    <property name="state" value="seven"/>
   </properties>
@@ -61,7 +61,7 @@
    <frame tileid="17" duration="100"/>
   </animation>
  </tile>
- <tile id="20">
+ <tile id="20" type="six">
   <properties>
    <property name="state" value="six"/>
   </properties>
@@ -71,7 +71,7 @@
    <frame tileid="20" duration="100"/>
   </animation>
  </tile>
- <tile id="24">
+ <tile id="24" type="three">
   <properties>
    <property name="state" value="three"/>
   </properties>
@@ -87,7 +87,7 @@
    <property name="state" value="empty"/>
   </properties>
  </tile>
- <tile id="31">
+ <tile id="31" type="two">
   <properties>
    <property name="state" value="two"/>
   </properties>

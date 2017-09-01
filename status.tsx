@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tileset name="status" tilewidth="58" tileheight="11" tilecount="4" columns="1">
  <image source="miss_tiles.png" trans="ff00da" width="58" height="44"/>
- <tile id="3">
+ <tile id="3" type="miss">
   <properties>
    <property name="state" value="miss"/>
   </properties>

@@ -4,7 +4,7 @@
   <property name="state" value="mid"/>
  </properties>
  <image source="left_tiles.png" trans="ff24b6" width="364" height="255"/>
- <tile id="1">
+ <tile id="1" type="low">
   <properties>
    <property name="state" value="low"/>
   </properties>
@@ -13,7 +13,7 @@
    <frame tileid="1" duration="100"/>
   </animation>
  </tile>
- <tile id="2">
+ <tile id="2" type="up">
   <properties>
    <property name="state" value="up"/>
   </properties>
@@ -22,7 +22,7 @@
    <frame tileid="3" duration="100"/>
   </animation>
  </tile>
- <tile id="4">
+ <tile id="4" type="mid">
   <properties>
    <property name="state" value="mid"/>
   </properties>
@@ -31,7 +31,7 @@
    <frame tileid="5" duration="100"/>
   </animation>
  </tile>
- <tile id="6">
+ <tile id="6" type="miss">
   <properties>
    <property name="state" value="miss"/>
   </properties>
@@ -44,7 +44,7 @@
    <frame tileid="7" duration="100"/>
   </animation>
  </tile>
- <tile id="8">
+ <tile id="8" type="rest">
   <properties>
    <property name="state" value="rest"/>
   </properties>
