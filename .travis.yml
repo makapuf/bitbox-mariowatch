@@ -2,7 +2,7 @@
 sudo: required
 dist: trusty
 
-language: c 
+language: c
 before_script:
   - git clone https://github.com/makapuf/bitbox.git
   - sudo apt-get -qq update
@@ -10,7 +10,7 @@ before_script:
   - pip install pillow
 
   # check it worked
-  - arm-none-eabi-gcc --version 
+  - arm-none-eabi-gcc --version
   - gcc --version
 
 script:

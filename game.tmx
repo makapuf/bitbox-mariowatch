@@ -1,48 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="35" tilewidth="8" tileheight="8" nextobjectid="101">
+<map version="1.0" tiledversion="1.1.2" orientation="orthogonal" renderorder="right-down" width="50" height="35" tilewidth="8" tileheight="8" infinite="0" nextobjectid="105">
  <tileset firstgid="1" source="parcel.tsx"/>
  <tileset firstgid="49" source="truck.tsx"/>
  <tileset firstgid="84" source="mario.tsx"/>
  <tileset firstgid="96" source="luigi.tsx"/>
  <tileset firstgid="108" source="status.tsx"/>
  <imagelayer name="background">
-  <image source="background.png" width="400" height="280"/>
-  <properties>
-   <property name="compress" type="bool" value="true"/>
-  </properties>
+  <image source="background.png" width="400" height="300"/>
  </imagelayer>
- <objectgroup name="objects" visible="0">
-  <object id="30" name="up" type="mario" gid="105" x="281.5" y="141.167" width="99" height="76" visible="0"/>
-  <object id="41" name="low" type="mario" gid="97" x="281.5" y="147.167" width="99" height="76" visible="0"/>
-  <object id="45" name="mid" type="mario" gid="98" x="281.5" y="141.167" width="99" height="76" visible="0"/>
-  <object id="47" name="rest" type="mario" gid="102" x="281.5" y="141.167" width="99" height="76" visible="0"/>
-  <object id="52" name="miss" type="mario" gid="100" x="281.5" y="141.167" width="99" height="76" visible="0"/>
-  <object id="29" name="up" type="luigi" gid="86" x="26.5" y="134.167" width="91" height="85" visible="0"/>
-  <object id="31" name="miss" type="luigi" gid="90" x="23.5" y="149.167" width="91" height="85" visible="0"/>
-  <object id="33" name="low" type="luigi" gid="85" x="26.5" y="149.167" width="91" height="85" visible="0"/>
-  <object id="38" name="rest" type="luigi" gid="92" x="26.5" y="149.167" width="91" height="85" visible="0"/>
-  <object id="55" name="mid" type="luigi" gid="88" x="26.5" y="142.167" width="91" height="85" visible="0"/>
-  <object id="40" name="move" type="truck" gid="58" x="24.5" y="108.167" width="59" height="55" visible="0"/>
-  <object id="34" name="one" type="truck" gid="64" x="24.5" y="108.167" width="59" height="55" visible="0"/>
-  <object id="35" name="six" type="truck" gid="69" x="24.5" y="108.167" width="59" height="55" visible="0"/>
-  <object id="39" name="five" type="truck" gid="53" x="24.5" y="108.167" width="59" height="55" visible="0"/>
-  <object id="43" name="three" type="truck" gid="73" x="24.5" y="108.167" width="59" height="55" visible="0"/>
-  <object id="44" name="four" type="truck" gid="57" x="24.5" y="108.167" width="59" height="55" visible="0"/>
-  <object id="46" name="eight" type="truck" gid="49" x="24.5" y="108.167" width="59" height="55" visible="0"/>
-  <object id="48" name="seven" type="truck" gid="66" x="24.5" y="108.167" width="59" height="55" visible="0"/>
-  <object id="49" name="two" type="truck" gid="80" x="24.5" y="108.167" width="59" height="55" visible="0"/>
-  <object id="50" name="three" type="truck" gid="73" x="24.5" y="108.167" width="59" height="55" visible="0"/>
-  <object id="98" name="empty" type="truck" gid="79" x="24" y="108" width="59" height="55" visible="0"/>
-  <object id="32" name="three" type="parcel" gid="18" x="97.5" y="150.167" width="269" height="86" visible="0"/>
-  <object id="36" name="five" type="parcel" gid="35" x="97.5" y="151.167" width="269" height="86" visible="0"/>
-  <object id="37" name="two" type="parcel" gid="21" x="97.5" y="151.167" width="269" height="86" visible="0"/>
-  <object id="42" name="one" type="parcel" gid="37" x="97.8333" y="151.167" width="269" height="86" visible="0"/>
-  <object id="51" name="zero" type="parcel" gid="46" x="97.5" y="151.167" width="269" height="86" visible="0"/>
-  <object id="53" name="four" type="parcel" gid="17" x="97.5" y="151.167" width="269" height="86" visible="0"/>
-  <object id="100" name="status" type="miss" gid="111" x="225.5" y="60.5" width="58" height="11" visible="0"/>
+ <objectgroup name="objects">
+  <object id="30" name="mario" gid="105" x="281.5" y="141.167" width="99" height="76" visible="0"/>
+  <object id="41" name="mario" gid="97" x="281.5" y="147.167" width="99" height="76" visible="0"/>
+  <object id="45" name="mario" gid="98" x="281.5" y="141.167" width="99" height="76" visible="0"/>
+  <object id="47" name="mario" gid="102" x="281.5" y="141.167" width="99" height="76"/>
+  <object id="52" name="mario" gid="100" x="281.5" y="141.167" width="99" height="76" visible="0"/>
+  <object id="29" name="luigi" gid="86" x="26.5" y="134.167" width="91" height="85" visible="0"/>
+  <object id="31" name="luigi" gid="90" x="23.5" y="149.167" width="91" height="85" visible="0"/>
+  <object id="33" name="luigi" gid="85" x="26.5" y="149.167" width="91" height="85" visible="0"/>
+  <object id="38" name="luigi" gid="92" x="26.5" y="149.167" width="91" height="85"/>
+  <object id="55" name="luigi" gid="88" x="26.5" y="142.167" width="91" height="85" visible="0"/>
+  <object id="40" name="truck" gid="58" x="24.5" y="108.167" width="59" height="55" visible="0"/>
+  <object id="98" name="truck" gid="79" x="24" y="108" width="59" height="55"/>
+  <object id="34" name="truck" gid="64" x="24.5" y="108.167" width="59" height="55" visible="0"/>
+  <object id="35" name="truck" gid="69" x="24.5" y="108.167" width="59" height="55" visible="0"/>
+  <object id="39" name="truck" gid="53" x="24.5" y="108.167" width="59" height="55" visible="0"/>
+  <object id="43" name="truck" gid="73" x="24.5" y="108.167" width="59" height="55" visible="0"/>
+  <object id="44" name="truck" gid="57" x="24.5" y="108.167" width="59" height="55" visible="0"/>
+  <object id="46" name="truck" gid="49" x="24.5" y="108.167" width="59" height="55" visible="0"/>
+  <object id="48" name="truck" gid="66" x="24.5" y="108.167" width="59" height="55" visible="0"/>
+  <object id="49" name="truck" gid="80" x="24.5" y="108.167" width="59" height="55" visible="0"/>
+  <object id="50" name="truck" gid="73" x="24.5" y="108.167" width="59" height="55" visible="0"/>
+  <object id="32" name="parcel" gid="18" x="97.5" y="150.167" width="269" height="86" visible="0"/>
+  <object id="36" name="parcel" gid="35" x="97.5" y="151.167" width="269" height="86" visible="0"/>
+  <object id="37" name="parcel" gid="21" x="97.5" y="151.167" width="269" height="86" visible="0"/>
+  <object id="42" name="parcel" gid="37" x="97.8333" y="151.167" width="269" height="86" visible="0"/>
+  <object id="51" name="parcel" gid="46" x="97.5" y="151.167" width="269" height="86" visible="0"/>
+  <object id="53" name="parcel" gid="17" x="97.5" y="151.167" width="269" height="86" visible="0"/>
+  <object id="100" name="status" gid="111" x="225.5" y="60.5" width="58" height="11" visible="0"/>
  </objectgroup>
- <imagelayer name="intro" visible="0">
-  <image source="intro.png" width="400" height="258"/>
+ <imagelayer name="intro">
+  <image source="intro.png" width="400" height="300"/>
  </imagelayer>
  <imagelayer name="info" visible="0">
   <image source="info.png" width="400" height="291"/>
